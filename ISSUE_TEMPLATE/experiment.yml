@@ -1,0 +1,44 @@
+name: "実験"
+description: "仮説を立てて，実験の成功条件を明確にする"
+title: "[実験] <何を確かめる?>"
+labels: ["type:exp"]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: 仮説 / 問い（必須）
+      placeholder: |
+        - 例：正則化を強くすると指標Xが改善するか？
+        - 例：手法AとBで指標Yに差があるか？
+    validations:
+      required: true
+
+  - type: textarea
+    id: success
+    attributes:
+      label: 成果物（必須）
+      description: "見る指標・図・表（数値 or 図の種類でOK）"
+      placeholder: |
+        - 指標：PSNR / SSIM / 誤差 / 収束速度 など
+        - 図：loss曲線 / 再構成画像 / アブレーション表 など
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: メモ（任意：後から追記でOK）
+      placeholder: |
+        - データ：
+        - 主要パラメータ：
+        - 気づき：
+    validations:
+      required: false
+
+  - type: dropdown
+    id: effort
+    attributes:
+      label: 規模感（目安）（必須）
+      options: ["S（〜1日）", "M（1〜4日）", "L（4〜7日）", "XL（分割して）"]
+    validations:
+      required: true

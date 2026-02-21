@@ -1,0 +1,46 @@
+name: "実装（機能追加・修正・リファクタ）"
+description: "レビュー可能なサイズで、Done of Definition (DoD) を明確にする"
+title: "[実装] <成果を一言>"
+labels: ["type:impl"]
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: 目的 / 成果（必須）
+      description: "このIssueが終わったら何ができる/変わるか（1〜3項目）"
+      placeholder: |
+        - 例：○○関数を追加し、△△の入力に対応する
+        - 例：□□のバグを修正し、再現ケースが通る
+    validations:
+      required: true
+
+  - type: textarea
+    id: dod
+    attributes:
+      label: 完了条件（DoD）（必須）
+      description: "具体的にチェック可能な条件を書いてください"
+      placeholder: |
+        - [ ] テストを追加/更新した（または不要な理由を記載）
+        - [ ] 仕様変更があればREADME/コメントを更新した
+        - [ ] 使い方・再現手順（コマンド/スクリプト）が分かる
+    validations:
+      required: true
+
+  - type: textarea
+    id: tasks
+    attributes:
+      label: タスクリスト（任意）
+      value: |
+        - [ ] Step 1
+        - [ ] Step 2
+        - [ ] Step 3
+    validations:
+      required: false
+
+  - type: dropdown
+    id: effort
+    attributes:
+      label: 規模感（目安）（必須）
+      options: ["S（〜半日）", "M（0.5〜2日）", "L（3〜5日）", "XL（分割して）"]
+    validations:
+      required: true

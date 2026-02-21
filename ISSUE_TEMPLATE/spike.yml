@@ -1,0 +1,34 @@
+name: "スパイク（調査・試作：時間制限あり）"
+description: "時間を区切った探索。結論と次の一手を残す"
+title: "[スパイク] <テーマ>"
+labels: ["type:spike"]
+body:
+  - type: dropdown
+    id: timebox
+    attributes:
+      label: タイムボックス（必須）
+      options: ["1時間", "2時間", "半日", "1日"]
+    validations:
+      required: true
+
+  - type: textarea
+    id: questions
+    attributes:
+      label: 調査する問い（必須）
+      placeholder: |
+        - Q1:
+        - Q2:
+    validations:
+      required: true
+
+  - type: textarea
+    id: deliverable
+    attributes:
+      label: 残す成果（必須）
+      description: "このIssueに短い結論を書く／リンク集／Go/No-Goなど"
+      placeholder: |
+        - このIssueに結論（3〜10行）
+        - 参考リンク（論文/実装）
+        - 次のアクション提案（やる/やらない、次に切るIssue）
+    validations:
+      required: true
