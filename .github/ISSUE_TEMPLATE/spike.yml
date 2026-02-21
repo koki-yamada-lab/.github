@@ -1,6 +1,6 @@
 name: "スパイク（調査・試作：時間制限あり）"
 description: "時間を区切った探索。結論と次の一手を残す"
-title: "[スパイク] <テーマ>"
+title: "[SPIKE] <テーマ>"
 labels: ["type:spike"]
 body:
   - type: dropdown

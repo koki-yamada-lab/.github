@@ -1,6 +1,6 @@
 name: "実装（機能追加・修正・リファクタ）"
 description: "レビュー可能なサイズで、Done of Definition (DoD) を明確にする"
-title: "[実装] <成果を一言>"
+title: "[IMPL] <取り組む実装を一言>"
 labels: ["type:impl"]
 body:
   - type: textarea
@@ -41,6 +41,6 @@ body:
     id: effort
     attributes:
       label: 規模感（目安）（必須）
-      options: ["S（〜半日）", "M（0.5〜2日）", "L（3〜5日）", "XL（分割して）"]
+      options: ["S（〜1日）", "M（1〜4日）", "L（4〜7日）", "XL（分割して）"]
     validations:
       required: true

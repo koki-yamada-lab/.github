@@ -1,0 +1,85 @@
+name: "バグ報告"
+description: "不具合の再現手順・期待結果・実結果をまとめる"
+title: "[BUG] <症状を一言で>"
+labels: ["type:bug"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: 概要（必須）
+      description: "何が起きているかを簡潔に"
+      placeholder: "例：特定の入力で推定結果がNaNになる"
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期待する挙動（必須）
+      placeholder: "例：NaNにならず、収束して結果が出る"
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: 実際の挙動（必須）
+      placeholder: "例：iter=120でlossが発散し、出力がNaNになる"
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro_steps
+    attributes:
+      label: 再現手順（必須）
+      description: "できれば最小例（入力データ/パラメータ/コマンド）"
+      placeholder: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: ログ・スクリーンショット（任意）
+      description: "エラーメッセージ、スタックトレース、図など"
+      placeholder: "ここに貼る or ファイル/リンク"
+    validations:
+      required: false
+
+  - type: textarea
+    id: env
+    attributes:
+      label: 環境情報（任意）
+      description: "再現性のため（OS / 版 / commit / GPUなど）"
+      placeholder: |
+        - OS:
+        - 言語/ツール（MATLAB/Pythonなど）:
+        - バージョン:
+        - commit hash:
+        - GPU/CPU:
+    validations:
+      required: false
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: 重要度（必須）
+      options:
+        - "P0: 作業が止まる/データ破損の恐れ"
+        - "P1: 主要機能の不具合"
+        - "P2: 軽微/回避策あり"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: チェック（任意）
+      options:
+        - label: "最新main（または最新タグ）で再現する"
+          required: false
+        - label: "最小再現を試した"
+          required: false

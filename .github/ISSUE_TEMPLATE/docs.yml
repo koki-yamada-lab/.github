@@ -1,0 +1,56 @@
+name: "ドキュメント（追加・修正）"
+description: "README/使い方/コメント/ノートの改善"
+title: "[DOCS] <対象と要点>"
+labels: ["type:docs"]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 種別（必須）
+      options:
+        - "誤記・ミス修正"
+        - "説明の補足（分かりにくい）"
+        - "手順の更新（挙動変更に追随）"
+        - "新規ドキュメント追加"
+        - "図・例・チュートリアル追加"
+    validations:
+      required: true
+
+  - type: textarea
+    id: target
+    attributes:
+      label: 対象（必須）
+      description: "どの文書/箇所か（パスやURL、セクション名）"
+      placeholder: |
+        - 例：README.md の "Installation"
+        - 例：docs/usage.md
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 修正案（任意）
+      description: "書き換えたい文面、追加したい説明、差分のイメージなど"
+      placeholder: |
+        - 例：この段落を以下に置き換える…
+        - 例：実行例を追記する…
+    validations:
+      required: false
+
+  - type: textarea
+    id: references
+    attributes:
+      label: 参考情報（任意）
+      description: "関連PR/Issue、実行ログ、スクショ、外部リンク等"
+      placeholder: "例：関連PR #123 / 実行ログ …"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: effort
+    attributes:
+      label: 規模感（任意）
+      options: ["S（〜30分）", "M（〜半日）", "L（1日〜）"]
+    validations:
+      required: false
